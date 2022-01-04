@@ -64,12 +64,17 @@ var CLB = {
         remark: d,
         ignore: "def",
       },
+      cache: false,
       type: "post",
       success: function (f) {
         Dock.loadHistorys(true);
         $("#history_remark").val("");
         $("#btn_history_clear").button("disable");
       },
+      error: function(f) {
+        //nothing
+      }
+
     });
   },
   poll: function () {
