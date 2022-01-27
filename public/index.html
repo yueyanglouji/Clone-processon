@@ -168,14 +168,21 @@
         });
         bindRemove();
       }
-
       function bindRemove() {
         $(document).on("click", ".js-remove", (e) => {
           const id = $(e.target).data("id");
           console.log(id);
-          $.post("/diagraming/remove", { id }, (res) => {
-            getList();
-          });
+          const r1 = confirm("1.确定要删除吗？");
+          const r2 = r1 && confirm("2.确定要删除吗？");
+          const r3 = r2 && confirm("3.确定要删除吗？");
+          if (r1 && r2 && r3) {
+            $.post("/diagraming/remove", { id }, (res) => {
+              getList();
+            });
+          }
+          else {
+            // nothing
+          }
         });
       }
 
