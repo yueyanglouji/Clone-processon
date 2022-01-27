@@ -7023,8 +7023,8 @@ var ProShare = {
       });
       $("#tag_items")
         .find(".close-tag")
-        .die()
-        .live("click", function () {
+        .off()
+        .on("click", function () {
           var h = $(this).parent().find("input").val();
           $(this).parent().remove();
           if ($("#tag_items").children("span").length < 5) {

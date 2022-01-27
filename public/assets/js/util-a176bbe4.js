@@ -29,7 +29,7 @@ var Util = {
   }),
     $.ajaxSetup({ cache: !1 }),
     $("[title],[original-title]")
-      .live("mouseover", function () {
+      .on("mouseover", function () {
         if ($(this).attr("disableTitle")) return !1;
         if (!(0 < $("#mind_hover_tip").length)) {
           var t = $(this);
@@ -87,7 +87,7 @@ var Util = {
           }
         }
       })
-      .live("mouseout", function () {
+      .on("mouseout", function () {
         $("#hover_tip").hide();
       });
   var fromUrl = document.referrer;

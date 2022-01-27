@@ -532,8 +532,8 @@ var Designer = {
       initPanelShapes();
       function initPanelShapes() {
         $(".panel_box")
-          .die()
-          .live("mousedown", function (downE) {
+          .off()
+          .on("mousedown", function (downE) {
             var currentShape = $(this);
             if (currentShape.hasClass("readonly")) {
               return;
@@ -2019,8 +2019,8 @@ var Designer = {
           }
         });
       $("input,textarea,select,div[contenteditable]")
-        .die()
-        .live("keydown.hotkey", function (b) {
+        .off()
+        .on("keydown.hotkey", function (b) {
           b.stopPropagation();
         });
       $(window)

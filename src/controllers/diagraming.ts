@@ -1,5 +1,6 @@
 import express from "express";
 import prisma from "../prisma";
+// @ts-ignore
 import { Prisma } from "@prisma/client";
 import { protect, Req } from "../middleware/auth";
 import { DigramingMessage } from "../types/digramingMsg";
@@ -117,6 +118,39 @@ router.get("/getdef", protect, async (req: Req, res) => {
     res.json({ error: true, message: error });
   }
 });
+/**
+ * save online
+ */
+router.post("/saveonline", protect, async (req: Req, res) => {
+  const { def, id } = req.body;
+  const saveData = JSON.parse(def) as Prisma.ChartCreateInput;
+  let result = await prisma.chart.findUnique({
+    where: {
+      id: id,
+    },
+  });
+  const updated = await prisma.chart.update({
+    where: {
+      id: id,
+    },
+    data: {
+      elements: saveData.elements,
+      page: saveData.page,
+    },
+  });
+  const newVersionData = await prisma.history.create({
+    data: {
+      remark: "自动存储",
+      title: result.title,
+      elements: saveData.elements,
+      page: saveData.page,
+      theme: result.theme ? result.theme : undefined,
+      userId: req.user.id,
+      chartId: id,
+    },
+  });
+  res.json(updated);
+})
 /**
  * 流程图操作生成历史
  */
