@@ -237,6 +237,7 @@ var CLB = {
     b.saving = true;
     b.sending = true;
     b.isOffLine = false;
+    b.tempMess=[];
     var d = localStorage.getItem("def_" + chartId);
     if (d == null || $.trim(d) == "") {
       Util.loading({
