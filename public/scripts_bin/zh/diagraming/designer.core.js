@@ -4900,6 +4900,7 @@ var Designer = {
           i.stopPropagation();
         })
         .bind("keydown", function (k) {
+          k.stopPropagation();
           if (k.keyCode == 13 && k.ctrlKey) {
             c();
             return false;
