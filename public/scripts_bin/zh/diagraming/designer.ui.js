@@ -28,6 +28,7 @@ var UI = {
           UI.changeTitle(f);
         })
         .bind("keydown", function (f) {
+          f.stopPropagation();
           if ($.trim($(this).val()).length > 60) {
             $(this).val($.trim($(this).val()).substring(0, 60));
           }
