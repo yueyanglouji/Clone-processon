@@ -164,17 +164,17 @@ router.post("/msg", protect, async (req: Req, res) => {
     },
   });
 
-  const newVersionData = await prisma.history.create({
-    data: {
-      remark: "自动存储",
-      title: result.title,
-      elements: result.elements,
-      page: result.page,
-      theme: result.theme ? result.theme : undefined,
-      userId: req.user.id,
-      chartId,
-    },
-  });
+  // const newVersionData = await prisma.history.create({
+  //   data: {
+  //     remark: "自动存储",
+  //     title: result.title,
+  //     elements: result.elements,
+  //     page: result.page,
+  //     theme: result.theme ? result.theme : undefined,
+  //     userId: req.user.id,
+  //     chartId,
+  //   },
+  // });
 
   for (const userAction of userActions) {
     if (userAction.action === "changeTitle") {
