@@ -9167,7 +9167,7 @@ var smartAiHelpCon = {
     j.html(
       "<div class='spinner_input'><input/></div><div class='buttons'><div class='spinner_up'></div><div class='spinner_down'></div></div>"
     );
-    var h = { step: 1, unit: "", max: 20000 };
+    var h = { step: 1, unit: "", max: 60000 };
     g = c.extend(h, g);
     if (typeof g.min != "undefined") {
       j.attr("min", g.min);
