@@ -4622,7 +4622,7 @@ var UI = {
 var Dock = {
   init: function () {
     var a = $("#designer_layout").outerWidth();
-    var d = $("#layout_block").width();
+    var d = $("#layout_block").outerWidth();
     var c = a - d;
     $("#dock").css("right", c);
     var e = c + $("#dock").outerWidth() - 1;
