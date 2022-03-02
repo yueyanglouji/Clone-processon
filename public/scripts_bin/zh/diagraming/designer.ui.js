@@ -4621,7 +4621,7 @@ var UI = {
 };
 var Dock = {
   init: function () {
-    var a = $("#designer_layout").width();
+    var a = $("#designer_layout").outerWidth();
     var d = $("#layout_block").width();
     var c = a - d;
     $("#dock").css("right", c);
