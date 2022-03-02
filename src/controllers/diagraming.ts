@@ -316,7 +316,7 @@ router.get("/watermarks", protect, async (req: Req, res) => {
   res.json({
     result: "success",
     userContext: {},
-    watermarks: ["小马"],
+    watermarks: [],
   });
 });
 

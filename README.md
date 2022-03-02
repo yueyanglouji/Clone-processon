@@ -35,7 +35,7 @@ DOMAIN="http://localhost:3000"
 # 邮箱
 EMAIL_USER="maqi1520@163.com"
 # 邮件发送人
-EMAIL_USER_NAME="狂奔的小马"
+EMAIL_USER_NAME="ProcessOn"
 
 # 邮件smtp
 EMAIL_HOST="smtp.163.com"
