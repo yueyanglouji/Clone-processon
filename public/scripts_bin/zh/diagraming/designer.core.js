@@ -75,11 +75,11 @@ var Designer = {
     initCanvas: function () {
       var n = Model.define.page.width.toScale();
       var g = Model.define.page.height.toScale();
-      if (n > 60000) {
-        n = 60000;
+      if (n > 20000) {
+        n = 20000;
       }
-      if (g > 60000) {
-        g = 60000;
+      if (g > 20000) {
+        g = 20000;
       }
       if (Model.define.page.orientation == "landscape") {
         var q = n;
