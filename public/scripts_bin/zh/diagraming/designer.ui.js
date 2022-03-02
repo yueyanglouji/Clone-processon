@@ -4912,6 +4912,9 @@ var Dock = {
         }
         $("#dock_size_w").spinner("setValue", Model.define.page.width + "px");
         $("#dock_size_h").spinner("setValue", Model.define.page.height + "px");
+        $("#dock_size_w input,#dock_size_h input").off("keydown").on("keydown", function(f){
+          f.stopPropagation();
+        });
       },
     });
     $("#dock_size_w").spinner({
@@ -6056,7 +6059,9 @@ var Dock = {
           }
         }
       } else {
-        a = $("<input type='text' class='input_text'/>").appendTo(b);
+        a = $("<input type='text' class='input_text'/>").appendTo(b).off("keydown").on("keydown", function(f) {
+            f.stopPropagation();
+        });
       }
     }
     if (c == null) {
@@ -9195,6 +9200,7 @@ var smartAiHelpCon = {
       a(j, k, g);
     });
     f.bind("keydown", function (l) {
+      l.stopPropagation();
       if (l.keyCode == 13) {
         var k = parseInt(c(this).val());
         if (isNaN(k)) {
