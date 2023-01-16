@@ -36,6 +36,9 @@ var UI = {
             var g = $.trim($(this).val());
             UI.changeTitle(g);
           }
+        })
+        .bind("paste", function (f) {
+          f.stopPropagation();
         });
     });
     $("#bar_theme").button({
