@@ -9222,6 +9222,9 @@ var smartAiHelpCon = {
         }
       }
     })
+      .bind("paste", function(l){
+        l.stopPropagation();
+      })
       .bind("focus", function (l) {
         c(this).select();
         c(this).bind("mouseup", function (m) {
